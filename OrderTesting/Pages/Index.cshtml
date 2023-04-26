@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="mt-5">
+    <h2 class="mb-4">Danh sách hàng trong kho</h2>
+    <br />
+    <div class="d-flex justify-content-between">
+        <a class="btn btn-primary btn-sm" href="/Product/Create">Thêm mới</a>
+        <form method="GET">
+            <div class="d-flex">
+                <input type="text" id="filter" class="form-control" asp-for="searchValue">
+                <button class="btn btn-primary btn-sm ms-2" style="width: 100px" type="submit">Tìm kiếm</button>
+
+            </div>
+        </form>
+
+    </div>
+    <table class="table goods-list-table">
+        <thead>
+            <tr>
+                <th>Số phiếu</th>
+                <th>Ngày lập phiếu</th>
+                <th>Mã vật tư</th>
+                <th>Tên vật tư</th>
+                <th>ĐVT</th>
+                <th>Số lượng nhập</th>
+                <th>Số lượng xuất</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.goodsList)
+            {
+                <tr>
+                    <td>@product.so_phieu</td>
+                    <td>@product.ngay_lap_phieu</td>
+                    <td>@product.ma_vt</td>
+                    <td>@product.ten_vt</td>
+                    <td>@product.dvt</td>
+                    <td>@product.sl_nhap</td>
+                    <td>@product.sl_xuat</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="/Product/Delete?id=@product.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

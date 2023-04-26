@@ -1,0 +1,67 @@
+﻿@page
+@model OrderTesting.Pages.Product.CreateModel
+@{
+}
+
+<div class="mt-2">
+    <h3>Tạo mới sản phẩm</h3>
+
+    <div class="mt-4">
+        <form method="post" class="g-3 needs-validation" novalidate>
+            <div class="row mb-4">
+                <div class="col-md-6 position-relative">
+                    <label for="soPhieuInput" class="form-label">Số phiếu</label>
+                    <input type="text" class="form-control" id="soPhieuInput" name="soPhieu" required>
+                    <div class="text-danger position-absolute bottom-0 left-0 @(Model.soPhieuHelper.Length > 0 ? "opacity-100" : "opacity-0")" style="font-size: 0.875rem; transform: translateY(22px)">
+                        @Model.soPhieuHelper
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <label for="ngayLapPhieuInput" class="form-label">Ngày lập phiếu</label>
+                    <input type="date" class="form-control" id="ngayLapPhieuInput" name="ngayLapPhieu" required>
+                    <div class="text-danger position-absolute bottom-0 left-0 @(Model.ngayLapPhieuHelper.Length > 0 ? "opacity-100" : "opacity-0")" style="font-size: 0.875rem; transform: translateY(22px)">
+                        @Model.ngayLapPhieuHelper
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6 position-relative">
+                    <label for="maVatTuInput" class="form-label">Mã vật tư</label>
+                    <input type="text" class="form-control" id="maVatTuInput" name="maVatTu" required>
+                    <div class="text-danger position-absolute bottom-0 left-0 @(Model.maVatTuHelper.Length > 0 ? "opacity-100" : "opacity-0")" style="font-size: 0.875rem; transform: translateY(22px)">
+                        @Model.maVatTuHelper
+                    </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <label for="tenVatTuInput" class="form-label">Tên vật tư</label>
+                    <input type="text" class="form-control" id="tenVatTuInput" name="tenVatTu" required>
+                    <div class="text-danger position-absolute bottom-0 left-0 @(Model.tenVatTuHelper.Length > 0 ? "opacity-100" : "opacity-0")" style="font-size: 0.875rem; transform: translateY(22px)">
+                        @Model.tenVatTuHelper
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6 position-relative">
+                    <label for="donViTinhInput" class="form-label">Đơn vị tính</label>
+                    <input type="text" class="form-control" id="donViTinhInput" name="donViTinh" required>
+                    <div class="text-danger position-absolute bottom-0 left-0 @(Model.donViTinhHelper.Length > 0 ? "opacity-100" : "opacity-0")" style="font-size: 0.875rem; transform: translateY(22px)">
+                        @Model.donViTinhHelper
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="soLuongNhapInput" class="form-label">Số lượng nhập</label>
+                    <input type="number" class="form-control" id="soLuongNhapInput" name="soLuongNhap">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label for="soLuongXuatass="form-label">Số lượng xuất</label>
+                    <input type="number" class="form-control" id="soLuongXuatInput" name="soLuongXuat">
+                </div>
+            </div>
+            <div class="row text-center">
+                <button class="btn btn-primary mx-auto" style="width: 150px" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+</div>
